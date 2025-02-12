@@ -27,6 +27,11 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const deleteTask = (id) => {
+    const updatedTasks = tasks.filter((task) => task.id !== id);
+    setTasks(updatedTasks);
+  };
+
   return (
     <div>
       <header>
@@ -42,7 +47,11 @@ function App() {
         </form>
 
         <ul>
-          <TodoList tasks={tasks} toggleTask={toggleTask} />
+          <TodoList
+            tasks={tasks}
+            toggleTask={toggleTask}
+            deleteTask={deleteTask}
+          />
         </ul>
       </header>
     </div>

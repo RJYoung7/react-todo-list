@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.css";
 import TodoList from "./components/TodoList";
 function App() {
   // State for all tasks
@@ -19,6 +20,13 @@ function App() {
     setNewTask("");
   };
 
+  const toggleTask = (id) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    );
+    setTasks(updatedTasks);
+  };
+
   return (
     <div>
       <header>
@@ -34,7 +42,7 @@ function App() {
         </form>
 
         <ul>
-          <TodoList tasks={tasks} />
+          <TodoList tasks={tasks} toggleTask={toggleTask} />
         </ul>
       </header>
     </div>

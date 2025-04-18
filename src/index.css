@@ -54,6 +54,12 @@ li {
   padding: 8px 12px;
   border-radius: 4px;
 }
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
 
 li.completed span {
   text-decoration: line-through;
@@ -89,4 +95,80 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.task-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid green;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.checkbox.checked {
+  background-color: lightgreen;
+}
+
+.checkmark-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.checkmark-path {
+  fill: none;
+  stroke: green;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.checkbox.checked .checkmark-path {
+  stroke-dashoffset: 0;
+}
+
+* Red Button Pop */ .button-pop {
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Implode Row Animation */
+.imploding {
+  animation: implode 0.8s forwards ease-in;
+  transform-origin: right center;
+}
+
+@keyframes implode {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translateX(100%);
+  }
 }

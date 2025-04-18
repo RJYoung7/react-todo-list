@@ -69,6 +69,14 @@ function App() {
     setTasks(updatedTasks);
   };
 
+  const editTask = (id, newText) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, text: newText } : task
+      )
+    );
+  };
+
   const deleteTask = (id) => {
     const updatedTasks = tasks.filter((task) => task.id !== id);
     setTasks(updatedTasks);
@@ -123,6 +131,7 @@ function App() {
             tasks={filterTasks(filter)}
             toggleTask={toggleTask}
             deleteTask={deleteTask}
+            editTask={editTask}
           />
         </ul>
       </header>

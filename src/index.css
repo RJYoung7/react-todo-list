@@ -172,3 +172,18 @@ button {
     transform: scale(0) translateX(100%);
   }
 }
+
+.todo-item {
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.todo-item:active {
+  cursor: grabbing;
+}
+
+.todo-item.drag-over {
+  border-top: 2px solid #999;
+}

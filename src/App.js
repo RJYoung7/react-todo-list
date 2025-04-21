@@ -132,6 +132,7 @@ function App() {
             toggleTask={toggleTask}
             deleteTask={deleteTask}
             editTask={editTask}
+            setTasks={setTasks}
           />
         </ul>
       </header>

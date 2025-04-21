@@ -1,10 +1,33 @@
 import { useState } from "react";
 
-export default function TodoItem({ task, toggleTask, deleteTask, editTask }) {
+export default function TodoItem({
+  task,
+  index,
+  onReorder,
+  draggedItem,
+  draggedOverItem,
+  toggleTask,
+  deleteTask,
+  editTask,
+}) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(task.text);
   const [isChecked, setIsChecked] = useState(task.completed);
   const [isDeleting, setIsDeleting] = useState(false);
+
+  const handleDragStart = () => {
+    draggedItem.current = index;
+  };
+
+  const handleDragEnter = () => {
+    draggedOverItem.current = index;
+  };
+
+  const handleDragEnd = () => {
+    onReorder(draggedItem.current, draggedOverItem.current);
+    draggedItem.current = null;
+    draggedOverItem.current = null;
+  };
 
   const handleEditSubmit = (e) => {
     e.preventDefault();
@@ -27,15 +50,12 @@ export default function TodoItem({ task, toggleTask, deleteTask, editTask }) {
       className={`todo-item ${task.completed ? "completed" : ""} ${
         isDeleting ? "imploding" : ""
       }`}
+      draggable
+      onDragStart={handleDragStart}
+      onDragEnter={handleDragEnter}
+      onDragEnd={handleDragEnd}
     >
       <div className="task-group">
-        {/* <button className="icon-button" onClick={() => toggleTask(task.id)}>
-          <img
-            src="../../assets/checkmark2.webp"
-            alt="Checkmark"
-            id="checkmark"
-          />
-        </button> */}
         <div
           className={`checkbox ${task.completed ? "checked" : ""}`}
           onClick={handleCheckboxClick}
@@ -61,14 +81,6 @@ export default function TodoItem({ task, toggleTask, deleteTask, editTask }) {
       </div>
 
       <div className="button-group">
-        {/* <button className="icon-button" onClick={() => toggleTask(task.id)}>
-          <img
-            src="../../assets/checkmark2.webp"
-            alt="Checkmark"
-            id="checkmark"
-          />
-        </button> */}
-        {/* <button onClick={() => deleteTask(task.id)}>X</button> */}
         <button
           className="delete-button"
           onClick={(e) => {

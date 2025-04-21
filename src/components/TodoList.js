@@ -2,14 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import TodoItem from "./TodoItem";
 
-export default function TodoList({
-  tasks,
-  toggleTask,
-  deleteTask,
-  editTask,
-  setTasks,
-  ...handlers
-}) {
+export default function TodoList({ tasks, setTasks, ...handlers }) {
   const draggedItem = useRef(null);
   const draggedOverItem = useRef(null);
 

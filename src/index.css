@@ -19,7 +19,7 @@ h1 {
 
 .task-form {
   display: flex;
-  margin-bottom: 20px;
+  padding: 0 12px 0 12px;
 }
 
 .task-form input {
@@ -186,4 +186,23 @@ button {
 
 .todo-item.drag-over {
   border-top: 2px solid #999;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 8px;
+}
+
+.filter-group button {
+  background-color: #ff8400;
+}
+
+.delete-button img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  padding-bottom: 0px;
 }

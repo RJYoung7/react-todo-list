@@ -69,6 +69,7 @@ export default function TodoItem({
           <form onSubmit={handleEditSubmit} className="edit-form">
             <input
               type="text"
+              name="taskEdit"
               value={editedText}
               onChange={(e) => setEditedText(e.target.value)}
               onBlur={handleEditSubmit}
@@ -88,7 +89,7 @@ export default function TodoItem({
             handleDelete();
           }}
         >
-          X
+          <img src="/assets/trashbin.png" alt="Delete" />
         </button>
       </div>
     </li>

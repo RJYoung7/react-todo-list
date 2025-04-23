@@ -12,13 +12,24 @@ A simple, clean, and responsive to-do list application built using **React**. Th
 
 ## 📸 Screenshots
 
-![Add Tasks](./public/assets/AddTask.png)
-![Complete Tasks](./public/assets/CompleteTasks.png)
-![Filter Tasks Active](./public/assets/FilterTasksActive.png)
-![Filter Tasks Completed](./public/assets/FilterTasksCompleted.png)
-![Delete Task Beginning](./public/assets/DeleteTaskBeginning.png)
-![Delete Task Middle](./public/assets/DeleteTaskMiddle.png)
-![Delete Task End](./public/assets/DeleteTaskEnd.png)
+### 📝 Add Tasks
+
+![Add Tasks](./public/assets/screenshots/AddTask.png)
+
+### ✅ Complete Tasks
+
+![Complete Tasks](./public/assets/screenshots/CompleteTasks.png)
+
+### 🔽 Filter Tasks
+
+![Filter Tasks Active](./public/assets/screenshots/FilterTasksActive.png)
+![Filter Tasks Completed](./public/assets/screenshots/FilterTasksCompleted.png)
+
+### ❌ Delete Tasks
+
+![Delete Task Beginning](./public/assets/screenshots/DeleteTaskBeginning.png)
+![Delete Task Middle](./public/assets/screenshots/DeleteTaskMiddle.png)
+![Delete Task End](./public/assets/screenshots/DeleteTaskEnd.png)
 
 ## 🛠️ Built With
 
